@@ -11,12 +11,3 @@ resource "aws_route_table" "publicRTable" {
   }
 }
 
-resource "aws_route_table" "privateRTable" {
-  vpc_id = aws_vpc.abdo.id
-  route {
-    cidr_block = "10.0.0.0/16"
-  }
-  tags = {
-    Name = "privateRTable"
-  }
-}

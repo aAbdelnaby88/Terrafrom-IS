@@ -1,3 +1,11 @@
+resource "aws_route_table" "privateRTable" {
+  vpc_id = aws_vpc.abdo.id
+
+  tags = {
+    Name = "privateRTable"
+  }
+}
+
 resource "aws_route_table_association" "public-1" {
   subnet_id      = aws_subnet.firstPublic.id
   route_table_id = aws_route_table.publicRTable.id
