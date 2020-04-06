@@ -1,0 +1,11 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('destory') {
+            steps {
+                sh "terraform destroy -auto-approve" 
+            }
+        }
+    }
+}
